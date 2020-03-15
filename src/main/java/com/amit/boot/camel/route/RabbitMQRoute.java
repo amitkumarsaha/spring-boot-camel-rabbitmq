@@ -9,10 +9,6 @@ import com.amit.boot.camel.model.Employee;
 @Component
 public class RabbitMQRoute extends RouteBuilder {
 	
-//	@SuppressWarnings("unused")
-//	@Autowired
-//	private ConnectionFactory rabbitMQConnectionFactory;
-
 	@Override
 	public void configure() throws Exception {
 		
