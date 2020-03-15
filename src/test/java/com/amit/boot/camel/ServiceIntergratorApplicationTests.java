@@ -1,10 +1,10 @@
-package com.beanstack.serviceintergrator;
+package com.amit.boot.camel;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ServiceIntergratorApplicationTests {
+class SpringBootCamelRabbitMQAppTests {
 
 	@Test
 	void contextLoads() {

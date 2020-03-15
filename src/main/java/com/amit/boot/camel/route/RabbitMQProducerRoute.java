@@ -12,9 +12,7 @@ public class RabbitMQProducerRoute extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
 		
-		JacksonDataFormat jsonDataFormat = new JacksonDataFormat(Employee.class);
-
-		from("direct:startRabbitMQPoint").id("rabbitMQProducer").marshal(jsonDataFormat)
+		from("direct:startRabbitMQPoint").id("rabbitMQProducer").marshal(new JacksonDataFormat(Employee.class))
 			.log("${body}")
 			.to("rabbitmq:test.exchange?connectionFactory=#rabbitMQConnectionFactory&queue=test.queue&autoDelete=false")
 			.end();
