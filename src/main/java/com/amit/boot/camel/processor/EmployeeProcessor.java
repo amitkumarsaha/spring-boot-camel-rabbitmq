@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import com.amit.boot.camel.model.Employee;
 
 @Component
-public class EmployeeRestRouteProcessor implements Processor{
+public class EmployeeProcessor implements Processor{
 
 	@Override
 	public void process(Exchange exchange) throws Exception {
