@@ -18,9 +18,15 @@ public class EmployeeRestRoute extends RouteBuilder {
 		public void configure() throws Exception {
 
 			restConfiguration()
-		      .component("servlet")
-		      .bindingMode(RestBindingMode.json)
-		      .dataFormatProperty("prettyPrint", "true");
+				.enableCORS(true)
+				.host("0.0.0.0")
+				.apiContextPath("/api-doc")
+				.apiProperty("api.title", "Employee REST API")
+				.apiProperty("api.version", "v1")
+				.apiContextRouteId("doc-api")
+				.component("servlet")
+				.bindingMode(RestBindingMode.json)
+				.dataFormatProperty("prettyPrint", "true");
 
 		    rest("/employee")
 		    	.get().id("employee")
