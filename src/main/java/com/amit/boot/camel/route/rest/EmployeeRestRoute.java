@@ -11,7 +11,8 @@ public class EmployeeRestRoute extends RouteBuilder {
 
 		@Override
 		public void configure() throws Exception {
-
+			
+			
 		    rest("/employee")
 		    	.get().id("employee")
 		    	.route()
@@ -24,7 +25,8 @@ public class EmployeeRestRoute extends RouteBuilder {
             		exchange.getIn().setBody(employee);
                 })
 		    	.to("direct:startRabbitMQPoint");
-			    	
+			
+		    
 	    	rest("/employee")
 		    	.post().id("createEmployee")
 		    	.outType(Employee.class)
