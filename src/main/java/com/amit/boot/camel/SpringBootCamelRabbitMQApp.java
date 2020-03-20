@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class SpringBootCamelRabbitMQApp {
 
+    private static final String CAMEL_SERVLET_NAME = "CamelServlet";
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootCamelRabbitMQApp.class, args);
 	}
@@ -16,7 +18,7 @@ public class SpringBootCamelRabbitMQApp {
 	@Bean
 	public ServletRegistrationBean<CamelHttpTransportServlet> servletRegistrationBean() {
 	    ServletRegistrationBean<CamelHttpTransportServlet> servlet = new ServletRegistrationBean<>(new CamelHttpTransportServlet(), "/*");
-	    servlet.setName("CamelServlet");
+	    servlet.setName(CAMEL_SERVLET_NAME);
 	    return servlet;
 	}
 
